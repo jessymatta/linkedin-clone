@@ -3,9 +3,9 @@ const {loginPersonal, signupPersonal} = require('../controllers/AuthController')
 const router = Router();
 
 router.post('/login/personal', loginPersonal);
-router.post('/login/company', loginCompany);
+// router.post('/login/company', loginCompany);
 router.post('/signup/personal', signupPersonal);
-router.post('/signup/company', signupCompany);
+// router.post('/signup/company', signupCompany);
 
 
 module.exports = router;
