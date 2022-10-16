@@ -2,6 +2,7 @@ import "./company_homepage.css"
 import CompanyNav from "../../components/company_navbar/CompanyNav"
 import CompanyProfile from "../../components/profile/CompanyProfile"
 import Jobs from "../../components/jobs/Jobs"
+import gray from "../../assets/gray.png"
 
 const CompanyHomepage = () => {
     return (
@@ -9,7 +10,7 @@ const CompanyHomepage = () => {
             <CompanyNav />
             <div className="company-homepage-elts">
                 <CompanyProfile logo_url={"../../assets/gray.png"} name={"com"} tagline={"current tagline"} location={"location"} />
-                <Jobs />
+                <Jobs logo_url={gray} />
             </div>
         </div>
     )

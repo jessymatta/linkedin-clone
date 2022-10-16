@@ -5,8 +5,49 @@
     margin: 55px;
     border-radius: 20px;
     background-color: white;
+    padding-bottom: 10px;
 }
 
-.jobs-title{
-    margin:20px
+.jobs-title {
+    margin: 20px
+}
+
+.job {
+    border-bottom: 1px solid gray;
+    min-height: 200px;
+    padding-top: 15px;
+    display: flex;
+    position: relative;
+}
+
+.company-logo img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+.position-name{
+    color:#2977C9;
+    margin-left: 10px;
+}
+
+.text-in-job{
+    font-size: 19px;
+    margin-left: 13px;
+}
+
+.btn-view-applicants{
+    border-radius: 50px;
+    height:40px;
+    background-color: #2977C9;
+    color: white;
+    font-size: 15px;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    bottom:0;
+    right: 0;
+    margin: 15px;
+    cursor: pointer;
 }
