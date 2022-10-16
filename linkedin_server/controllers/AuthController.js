@@ -27,14 +27,13 @@ const signupPersonal = async (req, res) => {
         user.password = await bcrypt.hash(password, 10);
 
         await user.save();
-        res.json(user)
+        res.json(user);
     } catch (err) {
         res.status(400).json({
             message: err.message
         })
     }
 
-    res.send("SignUp Personal");
 }
 
 module.exports = {
