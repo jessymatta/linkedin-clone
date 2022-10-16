@@ -2,7 +2,6 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const Company = require('../models/Company');
-// var fs = require('fs');
 const { path } = require('path');
 const { join } = require('path');
 const {saveLogo} = require ("../helper/helper_functions");
@@ -61,16 +60,25 @@ const signupCompany = async (req, res) => {
     }
 }
 
-// const saveLogo = (base64_img, email) => {
-//     const base64 = base64_img;
-//     const buff = Buffer.from(base64, 'base64');
-//     filePath =  email+".png"
-//     fs.writeFileSync( filePath, buff);
-//     return filePath;
-// }
+const loginCompany = async (req, res) => {
+    const { email, password } = req.body;
+
+    const company = await Company.findOne({ email }).lean();
+
+    if (!company) return res.status(404).json({ message: "Invalid Credentials" });
+
+    const isMatch = bcrypt.compare(password, company.password);
+    if (!isMatch) return res.status(404).json({ message: "Invalid Credentials" });
+
+    const token = jwt.sign({ email: company.email, name: company.name }, process.env.JWT_SECRET_KEY, {
+        expiresIn: '1h'
+    });
+    res.status(200).json(token)
+}
 
 module.exports = {
     loginPersonal,
     signupPersonal,
-    signupCompany
+    signupCompany,
+    loginCompany
 }
