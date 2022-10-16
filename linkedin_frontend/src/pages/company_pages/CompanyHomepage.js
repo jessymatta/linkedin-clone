@@ -3,7 +3,7 @@ import CompanyNav from "../../components/company_navbar/CompanyNav"
 
 const CompanyHomepage = () => {
     return (
-        <div>
+        <div className="company-homepage">
             <CompanyNav />
             CompanyHomepage
         </div>
