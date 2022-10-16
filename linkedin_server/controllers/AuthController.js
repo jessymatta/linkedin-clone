@@ -2,9 +2,10 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const Company = require('../models/Company');
-var fs = require('fs');
+// var fs = require('fs');
 const { path } = require('path');
 const { join } = require('path');
+const {saveLogo} = require ("../helper/helper_functions");
 
 const loginPersonal = async (req, res) => {
     const { email, password } = req.body;
@@ -60,13 +61,13 @@ const signupCompany = async (req, res) => {
     }
 }
 
-const saveLogo = (base64_img, email) => {
-    const base64 = base64_img;
-    const buff = Buffer.from(base64, 'base64');
-    filePath =  email+".png"
-    fs.writeFileSync( filePath, buff);
-    return filePath;
-}
+// const saveLogo = (base64_img, email) => {
+//     const base64 = base64_img;
+//     const buff = Buffer.from(base64, 'base64');
+//     filePath =  email+".png"
+//     fs.writeFileSync( filePath, buff);
+//     return filePath;
+// }
 
 module.exports = {
     loginPersonal,
