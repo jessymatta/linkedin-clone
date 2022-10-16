@@ -44,7 +44,7 @@ function Login() {
             axios.post(`http://localhost:8000/auth/login/company`, userObject).then((res) => {
                 console.log(res.data);
                 localStorage.setItem("token", res.data);
-                //naviagte
+                navigate("/company");
             }).catch((error) => {
                 console.log(error);
             })
