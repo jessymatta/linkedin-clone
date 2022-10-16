@@ -1,12 +1,14 @@
 import "./signup-form-users.css"
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SignupFormUsers = () => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const submitUser = async (e) => {
         e.preventDefault();
@@ -24,6 +26,12 @@ const SignupFormUsers = () => {
         })
 
     };
+
+
+
+    const companySignup = () =>{
+        navigate("/signup/companies");
+    }
 
     return (
         <div className="signup-form-users">
@@ -58,7 +66,7 @@ const SignupFormUsers = () => {
 
             <div className="nav-to-other-forms">
                 <p className="gray smaller-text">Already on LinkedIn? <span className="blue smaller-text">Sign in</span></p>
-                <p className="blue smaller-text">Company account?</p>
+                <p onClick={companySignup} className="blue smaller-text">Company account?</p>
 
             </div>
 
