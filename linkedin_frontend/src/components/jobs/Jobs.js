@@ -2,7 +2,9 @@ import "./jobs.css"
 
 const Jobs = () => {
     return (
-        <div>Jobs</div>
+        <div className="jobs-container">
+            <h2 className="jobs-title">Posted Job Openings</h2>
+        </div>
     )
 }
 

@@ -3,3 +3,7 @@
     height:100vh;
     background-color: #F3F2EF;
 }
+
+.company-homepage-elts{
+    display: flex;
+}

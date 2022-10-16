@@ -1,0 +1,12 @@
+.jobs-container {
+    /* border: 2px solid red; */
+    width: 580px;
+    min-height: 280px;
+    margin: 55px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.jobs-title{
+    margin:20px
+}
