@@ -1,8 +1,11 @@
 import "./signup.users.css";
+import LogoNav from "../../components/logo_nav/LogoNav";
 
 const SignupUsers = () => {
     return (
-        <div>SignupUsers</div>
+        <div class="users-signup">
+            <LogoNav/>
+        </div>
     )
 }
 
