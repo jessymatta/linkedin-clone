@@ -11,7 +11,7 @@ const SignupFormCompanies = () => {
     const [size, setSize] = useState("");
     const [type, setType] = useState("");
     const [tagline, setTagline] = useState("");
-    const [logo, setLogo] = useState("");
+    const [logo_url, setLogo] = useState("");
     const navigate = useNavigate();
 
 
@@ -25,7 +25,7 @@ const SignupFormCompanies = () => {
             size:size,
             type:type,
             tagline:tagline,
-            logo_url:""
+            logo_url:logo_url
         }
 
         axios.post(`http://localhost:8000/auth/signup/company`, userObject).then((res) => {
@@ -39,6 +39,23 @@ const SignupFormCompanies = () => {
     const userSignup = () =>{
         navigate("/");
     }
+
+    const convertImage =(e)=>{
+        let image_file = e.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(image_file);
+
+    reader.onload = (e) => {
+        let image_url = e.target.result;
+        setLogo(image_url.split(',')[1])
+    }
+}
+
+
+
+
+
+
     return (
         <div className="signup-form-users">
             <p className="signup-title">Join the biggest professional community</p>
@@ -109,6 +126,8 @@ const SignupFormCompanies = () => {
                 <div className="action-btns">
                     <button type="submit" className="submit-signup">Join</button>
                 </div>
+                <label className="upload_logo_label" htmlFor="logo">Upload Logo</label>
+                <input onChange={convertImage} className="upload_logo" type="file" id="logo_url" accept=".jpg, .jpeg, .png"></input>
             </form>
 
             <div className="nav-to-other-forms">

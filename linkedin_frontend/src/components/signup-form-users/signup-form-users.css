@@ -62,3 +62,13 @@
     font-size: 17px;
     margin-bottom:4px;
 }
+
+.upload_logo{
+    border: none !important;
+}
+
+.upload_logo_label{
+    margin-top: 15px;
+    font-size: 20px;
+    margin-left: 3px;
+}
