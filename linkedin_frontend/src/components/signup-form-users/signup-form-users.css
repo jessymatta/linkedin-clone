@@ -1,11 +1,17 @@
 .signup-form-users{
     border: 2px solid blue;
-    padding:50px;
     width: 50%;
     margin-top: 50px;
+    padding: 15px;
 }
 
 .signup-section{
     border: 1px solid purple;
     display: flex;
+}
+
+.signup-title{
+    color: #8F5849;
+    font-weight: lighter;
+    font-size: 58px;
 }
