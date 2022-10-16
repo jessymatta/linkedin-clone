@@ -1,0 +1,10 @@
+.signup-img{
+    border: 2px solid green;
+    width: 50%;
+    height: 100vh;
+    margin-top: 50px;
+}
+
+.signup-img img{
+    width: 100%;
+}
