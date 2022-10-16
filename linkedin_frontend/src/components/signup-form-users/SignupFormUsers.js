@@ -1,17 +1,35 @@
 import "./signup-form-users.css"
 import { useState } from "react";
+import axios from "axios";
 
 const SignupFormUsers = () => {
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const submitUser = async (e) => {
+        e.preventDefault();
+
+        const userObject = {
+            name:name,
+            email:email,
+            password:password
+        }
+
+        axios.post(`http://localhost:8000/auth/signup/personal`,userObject).then((res)=>{
+            console.log(res.data);
+        }).catch((error)=>{
+            console.log(error);
+        })
+
+    };
 
     return (
         <div className="signup-form-users">
-            <p class="signup-title">Join the biggest professional community</p>
+            <p className="signup-title">Join the biggest professional community</p>
 
-            <form className="signup-form">
+            <form onSubmit={submitUser} className="signup-form">
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" id="name" required="required" placeholder="Enter your name"
                     onChange={(e) => {

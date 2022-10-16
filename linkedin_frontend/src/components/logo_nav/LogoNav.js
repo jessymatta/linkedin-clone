@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png"
 
 const LogoNav = () => {
     return (
-        <div class="logo-nav-container">
+        <div className="logo-nav-container">
             <img  src={logo} alt="logo"/></div>
     )
 }
