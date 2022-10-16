@@ -11,10 +11,10 @@ function App() {
 
           <Route path="/">
             <Route index element={<SignupUsers />} />
-            <Route path="companies" element={<SignupCompanies />} />
+            <Route path="/signup/companies" element={<SignupCompanies />} />
           </Route>
-        </Routes>
 
+        </Routes>
       </BrowserRouter>
     </div>
   );
