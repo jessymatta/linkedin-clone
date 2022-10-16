@@ -51,6 +51,10 @@ const SignupFormCompanies = () => {
     }
 }
 
+const Login = () => {
+    navigate("/login");
+}
+
     return (
         <div className="signup-form-users">
             <p className="signup-title">Join the biggest professional community</p>
@@ -126,7 +130,7 @@ const SignupFormCompanies = () => {
             </form>
 
             <div className="nav-to-other-forms">
-                <p className="gray smaller-text">Already on LinkedIn? <span className="blue smaller-text">Sign in</span></p>
+                <p className="gray smaller-text">Already on LinkedIn? <span className="blue smaller-text" onClick={Login}>Sign in</span></p>
                 <p onClick={userSignup} className="blue smaller-text">Personal account?</p>
 
             </div>

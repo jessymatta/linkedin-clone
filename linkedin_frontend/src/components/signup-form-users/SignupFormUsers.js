@@ -27,6 +27,10 @@ const SignupFormUsers = () => {
 
     };
 
+    const Login = () => {
+        navigate("/login");
+    }
+
 
 
     const companySignup = () =>{
@@ -65,7 +69,7 @@ const SignupFormUsers = () => {
             </form>
 
             <div className="nav-to-other-forms">
-                <p className="gray smaller-text">Already on LinkedIn? <span className="blue smaller-text">Sign in</span></p>
+                <p className="gray smaller-text">Already on LinkedIn? <span className="blue smaller-text" onClick={Login}>Sign in</span></p>
                 <p onClick={companySignup} className="blue smaller-text">Company account?</p>
 
             </div>

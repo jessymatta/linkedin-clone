@@ -1,0 +1,88 @@
+import React, { useState, useEffect, useRef } from "react";
+import "./login.css";
+import LogoNav from "../../../components/logo_nav/LogoNav";
+
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+function Login() {
+    const userRef = useRef();
+
+
+    const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
+    const [user_type, setUserType] = useState("");
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        userRef.current.focus();
+    }, []);
+
+
+    
+
+    const goToSignup = () =>{
+        navigate("/");
+    }
+
+    return (
+        <>
+        <LogoNav/>
+        <div className="login-page">
+            
+            <section>
+                <h1>Sign in</h1>
+                <p className="small-text">Stay tuned on your professional world</p>
+                <form onSubmit={login}>
+                    {/* Username input */}
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="text"
+                        name="email"
+                        id="email"
+                        ref={userRef}
+                        autoComplete="off"
+                        onChange={(e) => {
+                            setUser(e.target.value);
+                        }}
+                        value={user}
+                        required
+                        placeholder="Enter your email"
+                    />
+
+                    {/* Password input */}
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        onChange={(e) => {
+                            setPassword(e.target.value);
+                        }}
+                        value={password}
+                        required
+                        placeholder="Enter your password"
+                    />
+
+                    {/* User Type */}
+                    <label for="user_type">Select account type</label>
+                    <select name="user_type" id="user_type" onChange={(e) => {
+                        setUserType(e.target.value);
+                    }}
+                        value={user_type}>
+                        <option selected="true" disabled="disabled">Select type</option>
+                        <option>Personal</option>
+                        <option>Company</option>
+                    </select>
+
+                    {/*Login button */}
+                    <button>Sign in </button>
+                    <p className="gray smaller-text">New to LinkedIn? <span className="blue smaller-text" onClick={goToSignup}>Join now</span></p>
+                </form>
+            </section>
+        </div>
+        </>
+    )
+}
+
+export default Login;
