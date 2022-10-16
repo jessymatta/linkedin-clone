@@ -51,11 +51,6 @@ const SignupFormCompanies = () => {
     }
 }
 
-
-
-
-
-
     return (
         <div className="signup-form-users">
             <p className="signup-title">Join the biggest professional community</p>
