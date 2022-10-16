@@ -1,0 +1,11 @@
+.signup-form-users{
+    border: 2px solid blue;
+    padding:50px;
+    width: 50%;
+    margin-top: 50px;
+}
+
+.signup-section{
+    border: 1px solid purple;
+    display: flex;
+}
