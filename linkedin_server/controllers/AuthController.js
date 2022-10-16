@@ -9,7 +9,7 @@ const {saveLogo} = require ("../helper/helper_functions");
 const loginPersonal = async (req, res) => {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email }).lean();
+    const user = await User.findOne({ email }).select("+password");
 
     if (!user) return res.status(404).json({ message: "Invalid Credentials" });
 
@@ -63,7 +63,7 @@ const signupCompany = async (req, res) => {
 const loginCompany = async (req, res) => {
     const { email, password } = req.body;
 
-    const company = await Company.findOne({ email }).lean();
+    const company = await Company.findOne({ email }).select("+password");
 
     if (!company) return res.status(404).json({ message: "Invalid Credentials" });
 
