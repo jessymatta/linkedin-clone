@@ -1,12 +1,10 @@
 .signup-form-users {
-    border: 2px solid blue;
     width: 50%;
     margin-top: 50px;
-    padding: 15px;
+    padding: 20px;
 }
 
 .signup-section {
-    border: 1px solid purple;
     display: flex;
 }
 
@@ -18,7 +16,6 @@
 
 
 .signup-form {
-    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     padding-right: 12%;
@@ -47,13 +44,14 @@
 }
 
 .nav-to-other-forms {
-    border: 2px solid red;
     text-align:center;
     margin-top: 18px;
 }
 
 .blue {
     color: #2977C9;
+    font-weight:bolder;
+    cursor:pointer;
 }
 
 .gray{
@@ -61,6 +59,6 @@
 }
 
 .smaller-text{
-    font-size: 15px;
+    font-size: 17px;
     margin-bottom:4px;
 }

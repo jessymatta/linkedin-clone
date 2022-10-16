@@ -1,7 +1,7 @@
 .logo-nav-container{
-    border: 2px solid red;
     width: 100vw;
     height: 87px;
+    padding-left:20px;
 }
 
 .logo-nav-container img{
