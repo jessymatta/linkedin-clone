@@ -4,6 +4,9 @@ const app = express();
 app.use(express.json());
 require('./config/db.config');
 
+var bodyParser = require("body-parser");
+app.use(bodyParser.json({limit: '300kb'}));
+
 const cors = require('cors');
 app.use(
     cors({
@@ -13,6 +16,7 @@ app.use(
         origin: ['http://localhost:8000', 'http://localhost:3000'],
     })
 );
+
 
 const authRoutes = require('./routes/auth.routes');
 app.use('/auth', authRoutes);
