@@ -96,12 +96,12 @@ function Login() {
                         />
 
                         {/* User Type */}
-                        <label for="user_type">Select account type</label>
+                        <label htmlFor="user_type">Select account type</label>
                         <select name="user_type" id="user_type" onChange={(e) => {
                             setUserType(e.target.value);
                         }}
                             value={user_type}>
-                            <option selected="true" disabled="disabled">Select type</option>
+                            <option value="DEFAULT" disabled="disabled">Select type</option>
                             <option>Personal</option>
                             <option>Company</option>
                         </select>
