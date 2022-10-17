@@ -54,11 +54,16 @@ const addProfile = async (req, res) => {
         res.status(400).send(err);
     }
 }
+const updateEducation = async (req, res) => {
+    res.send("test");
+}
+
 
 module.exports = {
     getAllJobs,
     getProfile,
     addEducation,
     addExperience,
-    addProfile
+    addProfile,
+    updateEducation
 }
