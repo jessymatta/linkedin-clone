@@ -3,7 +3,7 @@ const {getAllPostedJobs, addJobOpening} = require('../controllers/CompanyControl
 const AuthMiddlewareCompany = require('../middlewares/AuthMiddlewareCompany');
 const router = Router();
 
-router.get('/', AuthMiddlewareCompany, getAllPostedJobs);
+router.get('/job', AuthMiddlewareCompany, getAllPostedJobs);
 router.post('/job', AuthMiddlewareCompany, addJobOpening);
 
 module.exports = router;
