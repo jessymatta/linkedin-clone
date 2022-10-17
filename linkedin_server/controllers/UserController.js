@@ -32,8 +32,21 @@ const addEducation = async (req, res) => {
     }
 }
 
+const addExperience = async (req, res) => {
+    const { id, position_title, company_name, start_date, end_date,location } = req.body;
+    try {
+        const user = await User.findById(id);
+        user.experiences.push({ position_title, company_name, start_date, end_date,location });
+        await user.save();
+        res.status(200).send("Experience added successfuly")
+    } catch (error) {
+        res.status(400).send(err);
+    }
+}
+
 module.exports = {
     getAllJobs,
     getProfile,
-    addEducation
+    addEducation,
+    addExperience
 }
