@@ -43,8 +43,8 @@ const userSchema = new mongoose.Schema({
         school: String,
         degree: String,
         field_of_study: String,
-        start_date: Date,
-        end_date: Date,
+        start_date: String,
+        end_date: String,
         grade: String
     }],
     following: [{
