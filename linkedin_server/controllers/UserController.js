@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Company = require('../models/Company');
 
 const getProfile = async (req, res) => {
     const { id } = req.body;
@@ -11,8 +12,12 @@ const getProfile = async (req, res) => {
 }
 
 const getAllJobs = async (req, res) => {
-    // res.json({ "jobs": "jobs" });
-    res.json(req.user);
+    try {
+        const jobs = await Company.find();
+        res.status(200).send(jobs)
+    } catch (error) {
+        res.status(400).send(err);
+    }
 }
 
 module.exports = {
