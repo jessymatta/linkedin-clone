@@ -7,9 +7,9 @@ const CompanyProfile = (props) => {
         <div className="profile">
             <div className="banner"></div>
             <img  className="pp" src={gray} alt="logo"/>
-            <h3 className="welcome">Welcome, {props.name} !</h3>
-            <h9 className="tagline">{props.tagline}</h9> <br/>
-            <h9 className="location">{props.location}</h9>
+            <h1 className="welcome">Welcome, {props.name} !</h1>
+            <h1 className="tagline">{props.tagline}</h1> <br/>
+            <h1 className="location">{props.location}</h1>
 
         </div>
     )
