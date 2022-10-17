@@ -3,7 +3,8 @@ const {getAllPostedJobs, addJobOpening, getCompanyProfile, getApplicantProfile} 
 const AuthMiddlewareCompany = require('../middlewares/AuthMiddlewareCompany');
 const router = Router();
 
-router.get('/job', AuthMiddlewareCompany, getAllPostedJobs);
+router.post('/jobs', AuthMiddlewareCompany, getAllPostedJobs);
+// router.get('/job', AuthMiddlewareCompany, getAllPostedJobs);
 router.post('/job', AuthMiddlewareCompany, addJobOpening);
 router.get('/', AuthMiddlewareCompany, getCompanyProfile);
 router.get('/applicant', AuthMiddlewareCompany, getApplicantProfile);
