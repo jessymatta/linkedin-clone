@@ -1,7 +1,6 @@
 .profile {
-    /* border: 2px solid red; */
     width: 300px;
-    min-height: 280px;
+    height: 300px;
     margin: 55px;
     border-radius: 20px;
     background-color: white;
