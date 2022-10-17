@@ -19,18 +19,23 @@ const userSchema = new mongoose.Schema({
     },
     profile_url: {
         type: String,
+        default:""
     },
     banner_url: {
         type: String,
+        default:""
     },
     occupation: {
         type: String,
+        default:""
     },
     location: {
         type: String,
+        default:""
     },
     about: {
         type: String,
+        default:""
     },
     experiences: [{
         position_title: String,
