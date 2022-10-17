@@ -22,7 +22,18 @@ const getAllPostedJobs = async (req, res) => {
     }
 }
 
+const getCompanyProfile = async (req, res) => {
+    const { id } = req.body;
+    try {
+        const company = await Company.findById(id).select('-job_openings');
+        res.status(200).send(company);
+    } catch (error) {
+        res.status(400).send(err);
+    }
+}
+
 module.exports = {
     getAllPostedJobs,
-    addJobOpening
+    addJobOpening,
+    getCompanyProfile
 }
