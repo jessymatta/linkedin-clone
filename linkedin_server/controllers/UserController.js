@@ -33,12 +33,23 @@ const addEducation = async (req, res) => {
 }
 
 const addExperience = async (req, res) => {
-    const { id, position_title, company_name, start_date, end_date,location } = req.body;
+    const { id, position_title, company_name, start_date, end_date, location } = req.body;
     try {
         const user = await User.findById(id);
-        user.experiences.push({ position_title, company_name, start_date, end_date,location });
+        user.experiences.push({ position_title, company_name, start_date, end_date, location });
         await user.save();
         res.status(200).send("Experience added successfuly")
+    } catch (error) {
+        res.status(400).send(err);
+    }
+}
+
+const addProfile = async (req, res) => {
+    const { id, name, profile_url, banner_url, occupation, location, about } = req.body;
+    try {
+        const data = { name, profile_url, banner_url, occupation, location, about }
+        const new_info = await User.findByIdAndUpdate({ _id: id }, data, { new: true })
+        res.status(200).send(new_info)
     } catch (error) {
         res.status(400).send(err);
     }
@@ -48,5 +59,6 @@ module.exports = {
     getAllJobs,
     getProfile,
     addEducation,
-    addExperience
+    addExperience,
+    addProfile
 }
