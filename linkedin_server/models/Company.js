@@ -32,11 +32,14 @@ const companySchema = new mongoose.Schema({
     tagline: {
         type: String,
     },
-    /*job_openings:[{
+    job_openings: [{
         position_title: String,
         position_description: String,
-        applicants:{},
-    }],*/
+        applicants: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }],
+    }],
 })
 
 const Company = mongoose.model('Company', companySchema);
