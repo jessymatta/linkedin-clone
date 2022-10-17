@@ -13,9 +13,9 @@ const Jobs = (props) => {
 
                 <div>
                     <h2 className="position-name">Position Name</h2>
-                    <h9 className="text-in-job">Description part of </h9> <br/>
-                    <h9 className="text-in-job"> created_at </h9>
-                    <button class="btn-view-applicants">View Applicants</button>
+                    <h2 className="text-in-job">Description part of </h2> <br/>
+                    <h2 className="text-in-job"> created_at </h2>
+                    <button className="btn-view-applicants">View Applicants</button>
                 </div>
             </div>
         </div>
