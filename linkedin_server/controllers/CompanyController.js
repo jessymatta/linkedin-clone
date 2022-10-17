@@ -24,7 +24,7 @@ const getAllPostedJobs = async (req, res) => {
 }
 
 const getCompanyProfile = async (req, res) => {
-    const { id } = req.body;
+    const { id } = req.params;
     try {
         const company = await Company.findById(id).select('-job_openings');
         res.status(200).send(company);
