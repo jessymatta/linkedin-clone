@@ -20,7 +20,20 @@ const getAllJobs = async (req, res) => {
     }
 }
 
+const addEducation = async (req, res) => {
+    const { id, school, degree, field_of_study, start_date, end_date, grade } = req.body;
+    try {
+        const user = await User.findById(id);
+        user.education.push({ school, degree, field_of_study, start_date, end_date, grade });
+        await user.save();
+        res.status(200).send("Education added successfuly")
+    } catch (error) {
+        res.status(400).send(err);
+    }
+}
+
 module.exports = {
     getAllJobs,
-    getProfile
+    getProfile,
+    addEducation
 }
