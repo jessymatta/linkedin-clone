@@ -73,7 +73,8 @@ const loginCompany = async (req, res) => {
     const token = jwt.sign({ email: company.email, name: company.name }, process.env.JWT_SECRET_KEY, {
         expiresIn: '1h'
     });
-    res.status(200).json(token)
+    const id = company._id;
+    res.status(200).json({token,id})
 }
 
 module.exports = {
