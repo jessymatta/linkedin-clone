@@ -50,7 +50,7 @@ const userSchema = new mongoose.Schema({
     following: [{
         // TODO after finishing companies model
     }],
-    jobd_applied_to: [{
+    jobs_applied_to: [{
          // TODO after finishing companies model
     }]
 
