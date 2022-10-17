@@ -42,8 +42,8 @@ function Login() {
         else {
             //login for companies
             axios.post(`http://localhost:8000/auth/login/company`, userObject).then((res) => {
-                console.log(res.data);
-                localStorage.setItem("token", res.data);
+                localStorage.setItem("token",res.data.token);
+                localStorage.setItem("id",res.data.id);
                 navigate("/company");
             }).catch((error) => {
                 console.log(error);
