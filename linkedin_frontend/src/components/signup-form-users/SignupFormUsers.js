@@ -19,7 +19,8 @@ const SignupFormUsers = () => {
             password:password
         }
 
-        axios.post(`http://localhost:8000/auth/signup/personal`,userObject).then((res)=>{
+        axios.post(`http://localhost:8000/auth/signup/personal`,userObject)
+        .then((res)=>{
             console.log(res.data);
         }).catch((error)=>{
             console.log(error);
