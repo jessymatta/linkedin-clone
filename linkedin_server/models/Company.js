@@ -19,6 +19,7 @@ const companySchema = new mongoose.Schema({
     },
     logo_url: {
         type: String,
+        default:""
     },
     size: {
         type: String,
