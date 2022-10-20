@@ -72,6 +72,21 @@ const followCompany = async (req, res) => {
     }
 }
 
+const applyForJob = async (req, res) => {
+    const { company_id } = req.body;
+    const { job_id } = req.body;
+    const user_id = req.user._id;
+
+    try {
+        const user = await User.findById(user_id);
+        user.jobs_applied_to.push(job_id);
+        await user.save();
+        res.status(200).send("success")
+    } catch (error) {
+        res.status(400).send(err);
+    }
+}
+
 
 module.exports = {
     getAllJobs,
@@ -80,5 +95,6 @@ module.exports = {
     addExperience,
     addProfile,
     updateEducation,
-    followCompany
+    followCompany,
+    applyForJob
 }
