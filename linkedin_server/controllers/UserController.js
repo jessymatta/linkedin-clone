@@ -58,6 +58,20 @@ const updateEducation = async (req, res) => {
     res.send("test");
 }
 
+const followCompany = async (req, res) => {
+    const { company_id } = req.body;
+    const user_id = req.user._id;
+
+    try {
+        const user = await User.findById(user_id);
+        user.following.push(company_id);
+        await user.save();
+        res.status(200).send("success")
+    } catch (error) {
+        res.status(400).send(err);
+    }
+}
+
 
 module.exports = {
     getAllJobs,
@@ -65,5 +79,6 @@ module.exports = {
     addEducation,
     addExperience,
     addProfile,
-    updateEducation
+    updateEducation,
+    followCompany
 }

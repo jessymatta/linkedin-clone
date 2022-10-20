@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { companySchema } = require("./Company");
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -53,10 +54,12 @@ const userSchema = new mongoose.Schema({
         grade: String
     }],
     following: [{
-        // TODO after finishing companies model
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Company",
     }],
     jobs_applied_to: [{
-         // TODO after finishing companies model
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: "Company",
     }]
 
 })
