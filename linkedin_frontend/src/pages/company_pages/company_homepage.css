@@ -1,0 +1,8 @@
+.company-homepage{
+    width: 100vw;
+    background-color: #F3F2EF;
+}
+
+.company-homepage-elts{
+    display: flex;
+}

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { companySchema } = require("./Company");
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -19,18 +20,23 @@ const userSchema = new mongoose.Schema({
     },
     profile_url: {
         type: String,
+        default:""
     },
     banner_url: {
         type: String,
+        default:""
     },
     occupation: {
         type: String,
+        default:""
     },
     location: {
         type: String,
+        default:""
     },
     about: {
         type: String,
+        default:""
     },
     experiences: [{
         position_title: String,
@@ -43,15 +49,17 @@ const userSchema = new mongoose.Schema({
         school: String,
         degree: String,
         field_of_study: String,
-        start_date: Date,
-        end_date: Date,
+        start_date: String,
+        end_date: String,
         grade: String
     }],
     following: [{
-        // TODO after finishing companies model
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Company",
     }],
-    jobd_applied_to: [{
-         // TODO after finishing companies model
+    jobs_applied_to: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Company",
     }]
 
 })
